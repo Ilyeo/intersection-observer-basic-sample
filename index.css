@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 1fr;
+}
+
+.header {
+  background: #ccc;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.box {
+  height: 600px;
+}
+
+/* #container {
+  overflow: scroll;
+  z-index: 10;
+  position: relative;
+  display: grid;
+} */
+
+#target {
+  width: 200px;
+  height: 200px;
+  background: blue;
+}

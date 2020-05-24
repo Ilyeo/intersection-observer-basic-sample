@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Intersection Observer</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="page">
+      <header></header>
+      <main id="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div id="target"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </main>
+      <footer></footer>
+    </div>
+
+    <script>
+      const target = document.querySelector('#target');
+      const options = {
+        threshold: [0, 0.25, 0.5, 0.75, 1.0]
+      };
+      const onIntersection = (entries) => {
+        entries.forEach((entry) => {
+          entry.isIntersecting ? console.log('Visible') : console.log('No Visible');
+          entry.intersectionRatio >= 0.75 ? console.log('More than 75% is visible') : console.log(`Visibility in percentage ${entry.intersectionRatio}`);
+        });
+      };
+      const io = new IntersectionObserver(onIntersection, options);
+      io.observe(target);
+    </script>
+  </body>
+</html>
